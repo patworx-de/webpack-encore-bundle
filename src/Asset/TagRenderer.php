@@ -146,7 +146,7 @@ class TagRenderer implements ResetInterface
     {
         return implode(' ', array_map(
             function ($key, $value) {
-                return sprintf('%s="%s"', $key, htmlentities($value));
+                return sprintf('%s="%s"', $key, htmlentities($value, ENT_QUOTES, 'utf-8'));
             },
             array_keys($attributesMap),
             $attributesMap
